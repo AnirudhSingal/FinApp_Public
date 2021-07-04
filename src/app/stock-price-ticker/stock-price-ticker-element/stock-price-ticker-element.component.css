@@ -1,0 +1,18 @@
+.stock-element div{
+    display: inline-block;
+}
+
+.tickerColorPositive{
+    background-color: lightgreen;
+    border-radius: 1rem;
+}
+.tickerColorNegative{
+    background-color: pink;
+    border-radius: 1rem;
+}
+.addMarginRight{
+    margin-right: 0.5rem;
+}
+.light-text{
+    font-weight: lighter;
+}

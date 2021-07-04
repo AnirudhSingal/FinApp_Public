@@ -1,0 +1,37 @@
+<!-- <div class = "detailedStockChart">
+    <mat-button-toggle-group name="timeFrame" aria-label="timeFrame" (change)="ChangeTimeFrame($event.value)">
+        <mat-button-toggle value="1D"[checked]="true">1D</mat-button-toggle>
+        <mat-button-toggle value="1M">1M</mat-button-toggle>
+        <mat-button-toggle value="6M">6M</mat-button-toggle>
+        <mat-button-toggle value="YTD">YTD</mat-button-toggle>
+        <mat-button-toggle value="1Y">1Y</mat-button-toggle>
+        <mat-button-toggle value="5Y">5Y</mat-button-toggle>
+    </mat-button-toggle-group>
+    <figure id="PricePlot"></figure>
+</div> -->
+
+<div class = "detailedStockChart">
+    <div class="chart-head">
+        <mat-button-toggle-group id="finapp-toggle-group" name="timeFrame" aria-label="timeFrame" (change)="ChangeTimeFrame($event.value)">
+            <mat-button-toggle [disableRipple] = "true" id="finapp-toggle" value="1D"[checked]="true">1D</mat-button-toggle>
+            <mat-button-toggle [disableRipple] = "true" id="finapp-toggle" value="1M">1M</mat-button-toggle>
+            <mat-button-toggle [disableRipple] = "true" id="finapp-toggle" value="6M">6M</mat-button-toggle>
+            <mat-button-toggle [disableRipple] = "true" id="finapp-toggle" value="YTD">YTD</mat-button-toggle>
+            <mat-button-toggle [disableRipple] = "true" id="finapp-toggle" value="1Y">1Y</mat-button-toggle>
+            <mat-button-toggle [disableRipple] = "true" id="finapp-toggle" value="5Y">5Y</mat-button-toggle>
+        </mat-button-toggle-group>
+
+        <button mat-raised-button [disableRipple]= "true" id="finapp-button" (click)="hideFigure()">
+            <fa-icon [icon]="compressIcon"></fa-icon><span>VIEW SIMPLE CHART</span>
+        </button>
+    </div>
+    <figure id="detailed-Price-Plot"></figure>
+
+    <div *ngIf = "!isDataLoaded" class="figure-skeleton skeleton-bone">
+        <div class="aspect-ratio-box">
+            <div class="aspect-ratio-box-inside"></div>
+        </div>
+    </div>
+
+
+</div>

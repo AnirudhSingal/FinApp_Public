@@ -1,0 +1,105 @@
+<section class="key-statictics-header">
+    Key Statistics
+</section>
+<div class="key-statistics-component" *ngIf="isDataLoaded">
+    <section class="key-statistics-details">
+        
+        
+        <div class="key-statistics-element">
+            <div class="key-statistics-element-content">
+                <div class="key-statistics-element-header">
+                    Name
+                </div>           
+                <div class="key-statistics-element-value">
+                    {{(keyStatsData)?.name | NullValueConverter}}
+                </div>           
+            </div>
+        </div>
+
+        <div class="key-statistics-element">
+            <div class="key-statistics-element-content">
+                <div class="key-statistics-element-header">
+                    EBITDA Ratio
+                </div>           
+                <div class="key-statistics-element-value">
+                    {{(keyStatsData)?.ebitdaratio | number:'1.3-3'
+                     | NullValueConverter }}
+                </div>           
+            </div>
+        </div>
+
+        <div class="key-statistics-element">
+            <div class="key-statistics-element-content">
+                <div class="key-statistics-element-header">
+                    EPS
+                </div>           
+                <div class="key-statistics-element-value">
+                    {{(keyStatsData)?.eps | NullValueConverter}}
+                </div>           
+            </div>
+        </div>
+
+        <div class="key-statistics-element">
+            <div class="key-statistics-element-content">
+                <div class="key-statistics-element-header">
+                    Shares Outstanding
+                </div>           
+                <div class="key-statistics-element-value">
+                    {{(keyStatsData)?.sharesOutstanding | AbrreviateNumber | NullValueConverter}}
+                </div>           
+            </div>
+        </div>
+
+        <div class="key-statistics-element">
+            <div class="key-statistics-element-content">
+                <div class="key-statistics-element-header">
+                    P/E Ratio
+                </div>           
+                <div class="key-statistics-element-value">
+                    {{(keyStatsData)?.peRatioTTM  |  number:'1.2-2' | NullValueConverter}}
+                </div>           
+            </div>
+        </div>
+        
+        <div class="key-statistics-element">
+            <div class="key-statistics-element-content">
+                <div class="key-statistics-element-header">
+                    Price to Book Ratio
+                </div>           
+                <div class="key-statistics-element-value">
+                    {{(keyStatsData)?.priceToBookRatioTTM | number:'0.4-4' |  NullValueConverter}}
+                </div>           
+            </div>
+        </div>
+
+        <div class="key-statistics-element">
+            <div class="key-statistics-element-content">
+                <div class="key-statistics-element-header">
+                    Price to Sales Ratio
+                </div>           
+                <div class="key-statistics-element-value">
+                    {{(keyStatsData)?.priceToSalesRatioTTM | number:'0.4-4' | NullValueConverter}}
+                </div>           
+            </div>
+        </div>
+        
+        <div class="key-statistics-element">
+            <div class="key-statistics-element-content">
+                <div class="key-statistics-element-header">
+                    Last Dividend Reported
+                </div>           
+                <div class="key-statistics-element-value">
+                    {{(keyStatsData)?.lastDividendReported | NullValueConverter}}
+                </div>           
+            </div>
+        </div>
+    </section>
+</div>
+<div *ngIf="!isDataLoaded" class="key-statistics-details-skeleton skeleton-bone">
+    <div class="key-statistics-skeleton-component"  *ngFor="let n of 8 | GetArray" >
+        <div class="key-statistics-element-content-skeleton"></div>
+    </div>
+</div>
+<!-- [ngStyle]="{
+    'width.%' : 60 | GetRandom : 90
+}" -->

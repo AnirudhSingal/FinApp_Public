@@ -1,0 +1,7 @@
+<div *ngIf="isDataLoaded">
+    <h1>{{label}}</h1>
+    <div class="app-list-container">
+        <app-list-page-list  [listType]="listType" (pageChange)="onPageChange($event)"></app-list-page-list>
+    </div>
+</div>
+<app-list-page-news-list #newsList *ngIf="isNewsDataLoaded" [symbolList] = "currentSymbolList" ></app-list-page-news-list>

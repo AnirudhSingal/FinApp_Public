@@ -1,0 +1,23 @@
+<!-- <carousel *ngIf = "isDataLoaded" class="news-component">
+    <slide *ngFor="let data of newsData">
+        <app-main-page-news-element [data]="data"></app-main-page-news-element>
+    </slide>
+</carousel>
+ -->
+
+<div *ngIf = "isDataLoaded" class="news-component">
+    <div>
+        <app-main-page-news-element [data]="data"></app-main-page-news-element>
+    </div>
+    <ng-content></ng-content>
+    <div>
+        <app-main-page-news-list [newsList] = "newsData"></app-main-page-news-list>
+    </div>
+</div>
+
+
+<div *ngIf = "!isDataLoaded" class="main-page-main-container-skeleton skeleton-bone">
+    <div class="aspect-ratio-box">
+        <div class="aspect-ratio-box-inside"></div>
+    </div>
+</div>

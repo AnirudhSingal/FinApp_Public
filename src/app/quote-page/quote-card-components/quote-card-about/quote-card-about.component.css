@@ -1,0 +1,84 @@
+/* For Large Screens */
+.about-body{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+/* Universal */
+.about-header{
+    font-size: 1.4rem;
+    margin-bottom: 0.9rem;    
+}
+.about-description-text{
+    font-size: 0.9rem;
+    text-align: justify;
+    overflow: hidden;
+}
+
+.about-button-container{
+    position: relative;
+}
+
+/* skeleton */
+
+
+
+.about-body-skeleton{
+
+    display: flex;
+    flex-direction: row;
+}
+.about-body-skeleton section{ 
+    width: 50%;
+}
+
+.about-details-databox-skeleton{
+    padding-left: 0.5rem;
+    margin-bottom: 1rem;
+}
+.about-details-databox-skeleton div, .about-description-text-skeleton{
+    background-color: white;
+    border-radius: 0.1rem;
+}
+
+.about-details-databox-skeleton div:first-child{
+    height: 0.6rem;
+    margin-top: calc(0.6rem*0.5*0.5 + 1px) ;
+    margin-bottom: calc(0.6rem*0.5*0.5) ;
+}
+.about-details-databox-skeleton div:last-child{
+    height: 0.9rem;
+    margin-top: calc(0.9rem*0.5*0.5) ;
+    margin-bottom: calc(0.9rem*0.5*0.5) ;
+}
+
+.about-description-skeleton{
+    padding: 0 0.5rem;
+    margin-right: 0.9rem ;
+}
+.about-description-text-skeleton{
+    box-sizing: border-box;
+    height: 0.9rem;
+    /* /to make the description and details boxes same height */
+    margin-top: calc((calc(4.35rem + 3px))/7); 
+    width: 100%;
+}
+
+.about-description-text-skeleton:last-child{
+    margin-bottom:calc((calc(4.35rem + 3px))/7);
+}
+
+@media screen and (max-width: 1024px){
+    .about-body-skeleton{
+        display: flex;
+        flex-direction: column;
+    }    
+    .about-body-skeleton section{
+        width: 100%;
+        margin-top: 2rem;
+    }
+    .about-description-skeleton{
+        margin-right: 0;
+    }
+
+}

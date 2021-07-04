@@ -1,0 +1,34 @@
+<div class="qoute-card-about" *ngIf = "isDataLoaded">
+    <section class="about-header">
+        About {{aboutData.companyName}}
+    </section>
+    <div class="about-body">
+        <app-quote-card-databox [heading] = "'ADDRESS'" [value] = "address" [isLink] = "false"></app-quote-card-databox>
+        <app-quote-card-databox [heading] = "'PHONE'" [value] = "aboutData.phone" [isLink] = "false"></app-quote-card-databox>
+        <app-quote-card-databox [heading] = "'WEBSITE'" [value] = "aboutData.website" [isLink] = "true"></app-quote-card-databox>
+    
+        <div class="about-description-text" #description>
+            {{aboutData.description}}
+        </div>
+    </div>
+</div>
+<div *ngIf="!isDataLoaded">
+    <section class="about-header">
+        About
+    </section>
+    <div class="about-body-skeleton">
+        <section class="about-description-skeleton skeleton-bone">
+            <div class="about-description-text-skeleton" *ngFor="let n of 6 | GetArray"></div>
+        </section>
+        <section class="about-details-skeleton">
+            <div class="about-details-databox-skeleton skeleton-bone" *ngFor="let n of 3 | GetArray" >
+                <div [ngStyle] = "{
+                    'width.rem' :  4
+                }"></div>
+                <div [ngStyle] = "{
+                    'width.rem' : 8 | GetRandom : 10
+                }"></div>
+            </div>
+        </section>
+    </div>
+</div>

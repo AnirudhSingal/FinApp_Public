@@ -1,0 +1,28 @@
+<div class="stock-element">
+    <div *ngIf="quoteData$ | async as quoteData">
+        <div class="addMarginRight light-text">{{quoteData.name | NullValueConverter}}</div>
+        <div class="addMarginRight">{{quoteData.price | twoDecimal | NullValueConverter}}</div>
+
+        <div [ngSwitch] = "quoteData.change>=0">
+            <fa-icon *ngSwitchCase = "true" [icon]="faCaretUp" class="addMarginRight" 
+            [ngClass] = "'dark-positive-color'"
+            #changeIcon></fa-icon>
+            <fa-icon *ngSwitchCase = "false" [icon]="faCaretDown" class="addMarginRight" 
+            [ngClass] = "'dark-negative-color'"
+            #changeIcon></fa-icon>
+        </div> 
+
+        <div class="addMarginRight" 
+        [ngClass] = "{
+            'tickerColorNegative' : quoteData.change < 0, 
+            'tickerColorPositive' : quoteData.change >= 0 
+        }"
+        #tickerColor>&nbsp;{{quoteData.change | twoDecimal| NullValueConverter}}&nbsp;</div>
+        <div class="addMarginRight" 
+        [ngClass] = "{
+            'tickerColorNegative' : quoteData.change < 0, 
+            'tickerColorPositive' : quoteData.change >= 0 
+        }"
+        #tickerColor>&nbsp;{{quoteData.changesPercentage | twoDecimal | NullValueConverter | addSymbol:"%"}}&nbsp;</div>
+    </div>
+</div>

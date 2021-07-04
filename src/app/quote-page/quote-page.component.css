@@ -1,0 +1,100 @@
+/* media query breakpoints :  480, 768, 1024 */
+
+
+/* Universal */
+
+app-quote-card-key-statistics, app-quote-card-about, app-quote-card-news-press-release, app-quote-cart-simple-chart,
+.snapshot-details-main-window-overview, app-quote-cart-detailed-chart {
+    padding: 1rem 0;
+}
+
+.snapshot-details-main-window{
+    width: 100%;
+}
+.snapshot-details-side-window{
+    width:100%;
+}
+
+
+@media screen and (max-width: 320px){
+    .quote-page{
+        margin: 1rem auto 0;
+    }
+
+    .snapshot-details{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+}
+
+@media screen and (min-width: 320px){
+    .quote-page{
+        margin: 1rem auto 0;
+    }
+
+    .snapshot-details{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+@media screen and (min-width: 480px){
+    .quote-page{
+        width:90%;
+        margin: 1rem auto 0;
+    }
+    .snapshot-details{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+@media screen and (min-width: 768px){
+    .quote-page{
+        width:90%;
+        margin: 1rem auto 0;
+    }
+    .snapshot-details{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    .snapshot-details-main-window{
+        width: 60%;
+    }
+    .snapshot-details-side-window{  
+        width: 40%;
+    }
+}
+@media screen and (min-width: 1024px){
+    .quote-page{
+        width:90%;
+        margin: 1rem auto 0;
+    }
+    .snapshot-details{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    .snapshot-details-main-window{
+        width: 70%;
+    }
+    .snapshot-details-side-window{
+        width: 30%;
+    }
+
+}
+
+/* large screen */
+
+.CardContents {
+    align-content: space-around ;
+}
+
+.snapshot-details-main-window{
+    display: flex;
+    flex-direction: column;
+    padding-right: 1rem;
+}

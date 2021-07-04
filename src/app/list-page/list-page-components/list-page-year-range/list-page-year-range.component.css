@@ -1,0 +1,16 @@
+line.line.line-year-range{
+    stroke : grey;
+    stroke-width : 1px;
+    stroke-linecap : butt;
+    stroke-opacity : 1;
+}
+line.line.line-day-range{
+    stroke : blue;
+    stroke-width : 1px;
+    stroke-linecap : square;
+    stroke-opacity : 1;
+}
+
+figure svg{
+    overflow: visible;
+}

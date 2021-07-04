@@ -1,0 +1,46 @@
+<div class="quote-page" *ngIf="quoteData$ | async as quoteData">
+    <div >
+        <div class="quote-page-snapshot">
+            <div [ngClass] = "{
+                'dark-positive-border' : quoteData.change >= 0,
+                'dark-negative-border' : quoteData.change < 0
+            }">
+                <app-quote-page-snapshot-summary [symbol]="symbolValue"></app-quote-page-snapshot-summary>
+            </div>
+            <section class="snapshot-details" id="quote-content">
+                <div class="snapshot-details-main-window" #mainContainer>
+                    <div [ngClass] = "{
+                        'dark-positive-border' : quoteData.change >= 0,
+                        'dark-negative-border' : quoteData.change < 0
+                    }">
+                        <section class="snapshot-details-main-window-overview">
+                            <app-quote-cart-detailed-chart [symbol]="symbolValue" [previousClose] = "quoteData.previousClose"
+                            [openPrice] = "quoteData.open" [closePrice] = 'quoteData.price' *ngIf= "!isSimpleChartVisible"
+                            (closed) = "toggleChart()"></app-quote-cart-detailed-chart>
+                            <app-quote-page-snapshot-details [symbol] = "symbolValue"></app-quote-page-snapshot-details>
+                            <section class="snapshot-details-simple-chart-sm">
+                                <app-quote-cart-simple-chart [symbol]="symbolValue" [previousClose] = "quoteData.previousClose"
+                                [openPrice] = "quoteData.open" [closePrice] ='quoteData.price' *ngIf="isSimpleChartVisible && !isSimpleChartOnSide"
+                                (closed) = "toggleChart()" [idValue] =1 ></app-quote-cart-simple-chart>
+                            </section>    
+                        </section>
+                    </div>
+                    <app-quote-card-key-statistics [symbol] = "symbolValue" ></app-quote-card-key-statistics>
+                    <app-quote-card-news-press-release [symbol]="symbolValue"></app-quote-card-news-press-release>                    
+                </div>
+                <div id="quote-page-sidebar" class="snapshot-details-side-window sidebar" #sideContainer>
+                    <div class="quote-page-sidebar-inner sidebar-inner">
+                        <section class="snapshot-details-simple-chart-lg">
+                            <app-quote-cart-simple-chart [symbol]="symbolValue" [previousClose] = "quoteData.previousClose"
+                            [openPrice] = "quoteData.open" [closePrice] ='quoteData.price' *ngIf="isSimpleChartVisible && isSimpleChartOnSide"
+                            (closed) = "toggleChart()" [idValue] = 2></app-quote-cart-simple-chart>
+                        </section>    
+                        <app-quote-card-about [symbol]="symbolValue"></app-quote-card-about>
+                    </div>
+                </div>
+            </section>
+        </div> 
+        <div class="quote-page-main-component">
+        </div> 
+    </div>
+</div>

@@ -1,0 +1,68 @@
+<div *ngIf="isDataLoaded">
+
+    <app-stock-price-ticker></app-stock-price-ticker>
+
+    <div class="main-page">
+        <div class="main-page-quote-search-field">
+            <div class="quote">
+                <input type="text" [formControl]="symbol" aria-label="Number" placeholder="Search" matInput
+                    [matAutocomplete]="auto">
+            </div>
+        </div>
+        <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+            <mat-option *ngFor="let value of options$ | async" [value]="value">
+                {{value.name}} - {{value.symbol}}
+            </mat-option>
+        </mat-autocomplete>
+
+        <div class = "main-page-major-indexes" >
+            <div class="main-page-graph-list">
+                <div *ngFor="let data of chartDataArray">
+                    <app-main-page-major-indexes-chart [idValue]='data.idValue' [symbolValue]='data.symbol'
+                        [isContinuous]='data.isContinuous'></app-main-page-major-indexes-chart>
+                </div>
+            </div>
+            <!-- <div class= "main-page-major-indexes-buttons">
+                <button></button>
+                <button></button>
+            </div> -->
+
+        </div>
+
+
+        <div class="main-page-container" id="main-content">
+            <div class="main-page-main-container" #mainContainer>
+                <app-main-page-news>
+                    <div class="main-page-sidebar" *ngIf="isSmallScreen">
+                        <app-main-page-info-list [data]="activeStocks$" [listType] = "listPageType.Actives">
+                        </app-main-page-info-list>
+                        <app-main-page-info-list [data]="gainerStocks$" [listType] = "listPageType.Gainers">
+                        </app-main-page-info-list>
+                        <app-main-page-info-list [data]="loserStocks$" [listType] = "listPageType.Losers">
+                        </app-main-page-info-list>
+                        <app-main-page-info-list [data]="currencyList$" [listType] = "listPageType.Currencies">
+                        </app-main-page-info-list>
+                        <app-main-page-info-list [data]="cryptocurrencyList$" [listType] = "listPageType.CryptoCurrencies">
+                        </app-main-page-info-list>
+                    </div>
+                </app-main-page-news>
+            </div>
+            <div *ngIf= "!isSmallScreen" class="main-page-side-container">
+                <div  id="main-page-sidebar" class="sidebar" #sideContainer >
+                    <div class="main-page-sidebar-inner sidebar-inner">
+                        <app-main-page-info-list [data]="activeStocks$" [listType] = "listPageType.Actives">
+                        </app-main-page-info-list>
+                        <app-main-page-info-list [data]="gainerStocks$" [listType] = "listPageType.Gainers">
+                        </app-main-page-info-list>
+                        <app-main-page-info-list [data]="loserStocks$" [listType] = "listPageType.Losers">
+                        </app-main-page-info-list>
+                        <app-main-page-info-list [data]="currencyList$" [listType] = "listPageType.Currencies">
+                        </app-main-page-info-list>
+                        <app-main-page-info-list [data]="cryptocurrencyList$" [listType] = "listPageType.CryptoCurrencies">
+                        </app-main-page-info-list>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

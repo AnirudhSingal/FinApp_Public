@@ -1,0 +1,11 @@
+<div class="symbol-name text-color-highlight">{{symbolName}}</div>
+<div class="price-details">
+    <div class="price-details-element">
+        <div class="close-price">{{closePrice | number:'0.2-2'}}</div>
+        <div class = "change-group">
+            <div class="change" [ngClass]= "(change > 0)? 'text-color-positive': 'text-color-negative'">{{change| number:'0.2-2'}} </div>
+            <div class="change-percentage" [ngClass]= "(change > 0)? 'text-color-positive': 'text-color-negative'">({{changesPercentage | number:'0.2-2'}}%)</div>
+        </div>
+    </div>
+    <figure id="{{figureId}}"></figure>
+</div>

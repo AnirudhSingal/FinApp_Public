@@ -1,0 +1,51 @@
+<section class="snapshot-details-data" *ngIf = "isDataLoaded">
+    <section class="databox open-price">
+        <app-quote-card-databox [heading]="'open'" [value]= "data.price | number:'0.2-2'" [isRange] = "false"></app-quote-card-databox>
+    </section>
+    <section class="databox previous-close-price">
+        <app-quote-card-databox [heading]="'prev close'" [value]= "data.open |number:'0.2-2'" [isRange] = "false"></app-quote-card-databox>
+    </section>
+    <section class="databox volume">
+        <app-quote-card-databox [heading]="'volume'" [value]= data.volume [isRange] = "false"></app-quote-card-databox>
+    </section>
+    <section class="databox market-cap">
+        <app-quote-card-databox [heading]="'market cap'" [value]= "data.marketCap | AbrreviateNumber" [isRange] = "false"></app-quote-card-databox>
+    </section>
+    <section class="databox range-one-day">
+        <app-quote-card-databox [heading]= "'Day Range'" [isRange]="true" [value]= data.price 
+        [upperLimit]=  "data.dayHigh | number:'0.2-2'" [lowerLimit] = "data.dayLow | number:'0.2-2'" [figureId] = "'day-range'"></app-quote-card-databox>
+    </section>
+    <section class="databox range-52-week">
+        <app-quote-card-databox [heading]= "'52 Week Range'" [isRange]="true" [value]= data.price
+        [upperLimit]=  "data.yearHigh | number:'0.2-2'"  [lowerLimit] = "data.yearLow | number:'0.2-2'" [figureId] = "'year-range'"></app-quote-card-databox>
+    </section> 
+</section>
+
+
+<div class="snapshot-details-skeleton"  *ngIf="!isDataLoaded">
+    <div class= "databox-skeleton" *ngFor="let n of 4 | GetArray">
+        <div class="skeleton-bone">
+            <div [ngStyle] = "{
+                'width.rem' : 4
+            }"></div>
+            <div [ngStyle] = "{
+                'width.rem' : 6 | GetRandom : 8
+            }"></div>  
+        </div>
+    </div>
+    <div class= "databox-range-skeleton" *ngFor="let n of 2 | GetArray"> 
+        <div class="skeleton-bone">
+            <div [ngStyle] = "{
+                'width.rem' :  4
+            }"></div>
+            <div [ngStyle] = "{
+                'width.rem' : 6 | GetRandom : 8
+            }"></div>  
+            <div [ngStyle] = "{
+                'width.rem' :  5
+            }"></div>  
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,11 @@
+<div class="ticker" >
+    <div class="ticker__list" #tickerListComponent>
+        <div class="ticker__item" *ngFor = "let symbol of symbolList" >
+            <app-stock-price-ticker-element [symbol]="symbol" #tickerElement></app-stock-price-ticker-element>
+        </div>
+    </div>
+</div>
+<div class="ticker-skeleton skeleton-bone" [ngStyle]="{
+    'height.rem' : '0.3',
+    'transform' : 'translateY(calc(-0.3rem - 1px))'
+}"></div>

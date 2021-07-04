@@ -1,0 +1,24 @@
+.title{
+    text-transform: uppercase;
+    font-size: 0.6rem ;
+    font-weight: lighter ;
+    border-top: 1px black dotted;
+}
+.value, .range{
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+.range-figure{
+    height:20px;
+}
+
+line.line.line-range{
+    stroke : black;
+    stroke-width : 1px;
+    stroke-linecap : round;
+    stroke-opacity : 1;
+}
+
+.website-link{
+    cursor: pointer;
+}

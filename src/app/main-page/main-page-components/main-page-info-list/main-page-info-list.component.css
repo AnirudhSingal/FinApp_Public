@@ -1,0 +1,89 @@
+*{
+    box-sizing: border-box;
+    font-size : 0.9rem;
+}
+
+
+.info-element-header{
+    border-top: black dotted 1px;
+    display:flex;
+    flex-direction: row;
+}
+.info-element-header div{
+    width:25%;
+}
+.info-element-header div:not(:first-child){
+    text-align: right;
+}
+.list-label:hover{
+    cursor: pointer 
+}
+
+.tickerColorPositive{
+    color: green;
+    /* border-left: solid 0.15rem green; */
+}
+.tickerColorNegative{
+    color: red;
+    /* border-left: solid 0.15rem red; */
+}
+
+
+/* universal */
+
+.list-label{
+    font-size: 1.2rem;
+}
+.info-list{
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+.company-name{
+    font-size: 0.7rem ;
+    font-weight: 400;
+}
+.info-element{
+    transition: all 0.1s  linear;
+}
+.info-element:hover{
+    background-color:rgba(255,255,255) ;
+    transform: translate(-1px, -1px);
+    box-shadow: 0.1px 0.1px 1rem rgba(0,0,0,0.3);
+    scale: 1.01;
+    border: none;
+}
+
+
+/* skeleton */
+.info-list-skeleton{
+    padding: 0 0.5rem;
+}
+
+.main-page-side-container-skeleton-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.main-page-side-container-skeleton-content div div{
+    height : 0.9rem;
+    margin-top: calc(0.9rem * 0.5 *0.5 + 2px);
+    margin-bottom: calc(0.9rem * 0.5 *0.5 + 2px);
+    background-color : white;
+    border-radius : 0.1rem;
+}
+
+.main-page-side-container-skeleton-content div{
+    width: 33.33%
+}
+
+.main-page-side-container-skeleton-content div:nth-child(2){
+    display: flex;
+    justify-content: center;
+}
+
+.main-page-side-container-skeleton-content div:last-child{
+    display: flex;
+    flex-direction: row-reverse;
+}

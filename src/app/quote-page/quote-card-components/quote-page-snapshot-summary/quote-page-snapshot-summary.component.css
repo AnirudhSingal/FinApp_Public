@@ -1,0 +1,69 @@
+.group-margin{
+    margin-right: 0.5rem;
+}
+.price{
+    display: flex;
+    align-items: baseline;
+}
+
+.price-text{
+    font-size: 3rem ;
+    font-weight: bold ;
+}
+
+.change-section span:not(:last-child){
+    font-size: 1.2rem;
+}
+@media screen and (max-width:320px){
+    .price{
+        flex-direction: column;    
+    }
+}
+
+
+
+/* skeleton */
+
+.price-skeleton, .company-skeleton{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.company-skeleton{
+
+    margin: calc(1rem*0.5*0.5) 0 calc(1rem*0.5*0.5) 0.5rem
+    /* margin-top: calc(1rem*0.5*0.5); */
+    /* margin-bottom: calc(1rem*0.5*0.5); */
+}
+.price-skeleton{
+    margin: calc(3rem*0.5*0.5) 0 calc(3rem*0.5*0.5) 0.5rem
+
+    /* margin-top: calc(3rem*0.5*0.5); */
+    /* margin-bottom: calc(3rem*0.5*0.5); */
+}
+.quote-page-snapshot-summary-skeleton{
+    display: flex;
+    flex-direction: column;
+}
+
+.company-skeleton div, .price-skeleton div{
+    background-color: white;
+    border-radius: 0.1rem;
+}
+
+.company-skeleton div:first-child{
+    height: 1rem;
+}
+
+.company-skeleton div:last-child{
+    height: 0.6rem;
+}
+
+.price-skeleton div:first-child{
+    height: 3rem;
+}
+
+.price-skeleton div:last-child{
+    height: 1.2rem;
+}

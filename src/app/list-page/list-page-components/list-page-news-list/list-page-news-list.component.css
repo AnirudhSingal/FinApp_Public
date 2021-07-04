@@ -1,0 +1,127 @@
+.aspect-ratio-box{
+    height: 0;
+    overflow: hidden;
+    padding-top:calc(9 / 16 * 100%);
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.aspect-ratio-box-inside {
+    /* border:white 1px solid; */
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right:0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 2px;
+
+}
+.news-element{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1rem;
+    /* height: 5rem; */
+    animation: fadein 1s ;
+    animation-timing-function: ease-out;
+}
+
+.news-element:hover{
+    cursor: pointer;
+}
+
+.anchor{
+    content: ' ';
+    width: 100%;
+    height: 1rem;
+}
+
+
+@keyframes fadein{
+    from {opacity: 0%;}
+    to {opacity: 100%;}
+}
+
+/* .news-element-image{
+    width: 15%;
+} */
+
+
+
+.news-element-desciption{
+    font-size: 0.7rem;
+}
+.news-element-desciption span:not(:first-of-type){
+    margin-left: 0.3rem;
+    color:#959595;
+}
+.news-element-desciption-symbol{
+    font-weight: bolder;
+}
+
+.news-element-text-title{
+    font-weight: bolder;
+    font-size: 1rem;
+}
+.news-element-text-text{
+    font-size: 0.9rem;
+    text-overflow: ellipsis;
+    text-align: justify;
+    text-justify: newspaper;
+}
+
+
+
+
+@media screen and (max-width: 768px){
+
+    .news-element-image{
+        display: none;
+    }
+    .news-element-text{
+        padding:0;
+    }
+
+    .news-element-container{
+        width: 95%;
+        margin:  auto;
+    }
+
+}
+
+@media screen and (min-width: 768px){
+
+    .news-element-image{
+        width: 200px;
+    }
+    .news-element-text{
+        width: calc(100% - 200px)
+    }
+    .news-element-container{
+        width: 95%;
+        margin:  auto;
+    }
+    .news-element-text{
+        padding-left: 1rem;
+    }
+}
+
+@media screen and (min-width: 1024px){
+
+    .news-element-image{
+        width: 200px;
+    }
+    .news-element-text{
+        width: calc(100% - 200px)
+    }
+    .news-element-container{
+        width: calc(100% * 768 / 1024);
+        margin:  auto;
+    }
+    .news-element-text{
+        padding-left: 1rem;
+    }
+}

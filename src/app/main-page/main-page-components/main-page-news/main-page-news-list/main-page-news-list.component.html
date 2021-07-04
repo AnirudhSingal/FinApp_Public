@@ -1,0 +1,29 @@
+<div *ngIf="isDataLoaded">
+    <div class="news-element" *ngFor="let newsData of infiniteScrollList" (click)="redirectToLink(newsData.url)">
+        <div class="news-element-image">
+            <div class="aspect-ratio-box">
+                <div class="aspect-ratio-box-inside news-container" [ngStyle]="{
+                    'background-image' : 'url( '+ newsData.image +')'
+                }">
+                </div>
+            </div>
+        </div>
+        <div class="news-element-text">
+            <div class="news-element-desciption">
+                <span class="news-element-desciption-symbol text-color-highlight">{{newsData.symbol |
+                    GetSymbolName | async}}</span>
+                <span class="news-element-desciption-site">{{newsData.site}}</span>
+                <span class="news-element-desciption-time">{{newsData.date | TimeElapsed }}</span>
+            </div>
+            <div class="news-element-text-title">{{newsData.title}}</div>
+            <div class="news-element-text-text">{{newsData.text}}</div>
+        </div>
+    </div>
+    <!-- anchor for intersection observer -->
+    <div #anchor></div>
+    <div *ngIf="isLoadMoreNewsButtonActive">
+        <button (click)="loadMoreNews(newsList,infiniteScrollList)">
+            Load More...
+        </button>
+    </div>
+</div>

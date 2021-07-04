@@ -1,0 +1,59 @@
+<div class="quote-page-snapshot-summary-skeleton skeleton-bone"  *ngIf="!isDataLoaded">
+
+    <div class= "company-skeleton"> 
+        <div class="group-margin" [ngStyle]="{
+            'width.rem' : 4
+        }">
+        </div>
+        <div [ngStyle]="{
+            'width.rem' : 5
+        }">
+        </div>
+    </div>
+    <div class= "company-skeleton"> 
+        <div class="group-margin" [ngStyle]="{
+            'width.rem' : 7 | GetRandom : 9
+        }">
+        </div>
+        <div [ngStyle]="{
+            'width.rem' : 6
+        }">
+        </div>
+    </div>
+
+    <div class= "price-skeleton">
+        <div class="group-margin" [ngStyle]="{
+            'width.rem' : 8 | GetRandom : 10
+        }">
+        </div>
+        <div [ngStyle]="{
+            'width.rem' : 5 | GetRandom : 8
+        }">
+        </div>
+    </div>
+</div>
+
+<section class="quote-page-snapshot-summary" *ngIf="isDataLoaded">
+    <section class="company">
+        <div>
+            <span class="symbol group-margin">{{data.symbol}}{{data.country === null ? '' : ':' +data.country}}</span>
+            <span class="exchange small-label-light">{{data.exchangeShortName}}</span>
+        </div>
+        <div>
+            <span class="name group-margin">{{data.name}}</span>
+            <span class="company-profile small-label-light">company info</span>
+        </div>
+    </section>
+    <section class="price">
+        <div class="group-margin">
+            <span class="price-text">{{data.price}}</span>
+            <span class="currency small-label-light" >{{data.currency}}</span>
+        </div>
+        <div class="change-section">
+            <span class="change group-margin">{{data.change}}</span>
+            <span class="changePercentage group-margin">{{data.changesPercentage}}%</span>
+            <span class="triangle group-margin"></span>
+        </div>
+    </section>
+</section>
+

@@ -1,0 +1,12 @@
+<div class="news-press-release-header">
+    <mat-button-toggle-group id="finapp-toggle-group" name="timeFrame" aria-label="timeFrame" (change)="ChangeType($event.value)">
+        <mat-button-toggle id="finapp-toggle" value="News"[checked]="true">News</mat-button-toggle>
+        <mat-button-toggle id="finapp-toggle" value="Press Releases">Press Releases</mat-button-toggle>
+    </mat-button-toggle-group>
+</div>
+<div *ngIf="isNewsOpen">
+    <app-quote-card-news-component [symbol] = "symbol"></app-quote-card-news-component>
+</div>      
+<div *ngIf="!isNewsOpen">
+    <app-quote-card-press-release-component [symbol]="symbol"></app-quote-card-press-release-component>
+</div>

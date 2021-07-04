@@ -1,0 +1,176 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import 'alertifyjs/build/css/alertify.min.css';
+
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Jost:wght@700&display=swap');
+
+:root{
+    --dark-positive : green;
+    --dark-negative : red;
+    --blue-highlight : #0f69ff;
+}
+
+
+html, body {height: 100%;}
+html {
+    /*based on https://bits.theorem.co/css-pro-tips-responsive-font-sizes-and-when-to-use-which-units/*/
+    /* https://zellwk.com/blog/rem-vs-em/ */
+    font-size: calc(1em + .1vw);
+    /* font-family: "FuturaND-Bold",sans-serif; */
+    font-family:"SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+
+}
+body {
+    /* font-family: Roboto, "Helvetica Neue", sans-serif; */
+    overflow-x: hidden;
+}
+
+.small-label-light{
+    text-transform: uppercase;
+    font-size: 0.6rem ;
+    font-weight: lighter ;
+}
+
+
+
+/*Mat toggle button custom style*/
+#finapp-toggle  .mat-button-toggle-label-content{
+    padding: 0 0.3em;
+    line-height: 0;
+    font-weight: lighter;
+}
+
+#finapp-toggle-group  .mat-button-toggle-checked{
+    font-weight: bold;
+    border-left: none;
+    border-bottom: 2px black solid;
+}
+
+#finapp-toggle{
+    border-left: none;
+}
+#finapp-toggle-group{
+    border-radius: 0px;
+    border: none;
+}
+#finapp-toggle-button:focus{ 
+    /*unset focus border*/ 
+    outline: unset;
+}
+
+/* Mat button customer design */
+#finapp-button{
+    font-weight: unset;
+    line-height: unset;
+    font-size: unset;
+    border-radius:unset;
+}
+#finapp-button:focus{ 
+    /*unset focus border*/ 
+    outline: unset;
+    cursor: pointer;
+}
+
+
+
+/* Theme */
+
+.dark-positive-color{
+    color: var(--dark-positive);
+
+}
+.dark-negative-color{
+    color: var(--dark-negative);
+}
+
+.dark-positive-border{
+    border-left: var(--dark-positive) solid 10px;
+}
+.dark-negative-border{
+    border-left: var(--dark-negative) solid 10px;
+}
+
+
+
+/*  Skeleton Theme */
+
+/* .skeleton-bone {
+    position: relative;
+    background: #d8d8d8;
+    animation-duration: 1.2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeHolderShimmer;
+    animation-timing-function: linear;
+    background-image: linear-gradient(to right, #d8d8d8 0%,
+    #d4d4d4 10%, #cfcfcf 20%,
+    #cbcbcb 30%, #c8c8c8 40%,
+    #c4c4c4 50%, #c8c8c8 60%,    
+    #cbcbcb 70%, #cfcfcf 80%,
+    #d4d4d4 90%, #d8d8d8 100%);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+@keyframes placeHolderShimmer {
+    0% {
+      background-position: -100% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+} */
+
+.skeleton-bone {
+    position: relative;
+    overflow: hidden;
+    background:#d8d8d8
+}
+.skeleton-bone::before {
+    
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    height: 100%;   
+    width:100%;
+    background: linear-gradient(to right, #d8d8d8 0%,
+    #d4d4d4 10%, #cfcfcf 20%,
+    #cbcbcb 30%, #c8c8c8 40%,
+    #c4c4c4 50%, #c8c8c8 60%,    
+    #cbcbcb 70%, #cfcfcf 80%,
+    #d4d4d4 90%, #d8d8d8 100%);
+    animation: load 2s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
+}
+.skeleton-bone div{
+    position: relative;
+    z-index: 1000;
+}
+@keyframes load {
+    0%{
+        left: -100%;
+    }
+    100%{
+        left: 100%;
+    }
+}
+
+
+
+
+
+
+
+/* theme */
+.text-color-negative{
+
+    color: var(--dark-negative);
+}
+.text-color-positive{
+    color: var(--dark-positive);
+}
+.text-color-highlight{
+    color: var(--blue-highlight) 
+}

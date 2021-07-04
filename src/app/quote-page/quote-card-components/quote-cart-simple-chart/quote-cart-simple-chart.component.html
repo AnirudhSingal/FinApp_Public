@@ -1,0 +1,32 @@
+<!-- <div class = "simpleStockChart">
+    <mat-button-toggle-group name="timeFrame" aria-label="timeFrame" (change)="ChangeTimeFrame($event.value)">
+        <mat-button-toggle value="1D"[checked]="true">1D</mat-button-toggle>
+        <mat-button-toggle value="1M">1M</mat-button-toggle>
+        <mat-button-toggle value="1Y">1Y</mat-button-toggle>
+        <mat-button-toggle value="5Y">5Y</mat-button-toggle>
+    </mat-button-toggle-group>
+    <figure id="simplePricePlot"></figure>
+</div> -->
+
+<div class = "simpleStockChart">
+    <div class="chart-head">
+        <mat-button-toggle-group id="finapp-toggle-group" name="timeFrame" aria-label="timeFrame" (change)="ChangeTimeFrame($event.value)">
+            <mat-button-toggle [disableRipple] = "true" id="finapp-toggle" value="1D"[checked]="true">1D</mat-button-toggle>
+            <mat-button-toggle [disableRipple] = "true" id="finapp-toggle" value="1M">1M</mat-button-toggle>
+            <mat-button-toggle [disableRipple] = "true" id="finapp-toggle" value="1Y">1Y</mat-button-toggle>
+            <mat-button-toggle [disableRipple] = "true" id="finapp-toggle" value="5Y">5Y</mat-button-toggle>
+        </mat-button-toggle-group>
+        <button mat-raised-button [disableRipple]= "true" id="finapp-button" (click) = "hideFigure()">
+            <fa-icon [icon]="expandIcon"></fa-icon><span>VIEW FULL CHART</span>
+        </button>
+
+    </div>
+    <figure id="{{'simple-Price-Plot-' + idValue}}" ></figure>
+
+    <div *ngIf = "!isDataLoaded" class="figure-skeleton skeleton-bone">
+        <div class="aspect-ratio-box">
+            <div class="aspect-ratio-box-inside"></div>
+        </div>
+    </div>
+
+</div>

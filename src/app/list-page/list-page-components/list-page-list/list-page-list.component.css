@@ -1,0 +1,67 @@
+.sticky-first-column-container{
+    /* height: 400px;
+    width: 550px; */
+    max-width: 100%;
+    overflow: auto;
+  }
+
+
+  .sticky-first-column-container table{
+    width:100%;
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+    margin-bottom: 2rem;
+  }
+  .sticky-first-column-container td.mat-column-star {
+    width: 20px;
+    padding-right: 8px;
+  }
+  
+  .sticky-first-column-container th.mat-column-position, td.mat-column-position {
+    padding-left: 8px;
+  }
+  
+  .sticky-first-column-container .mat-table-sticky-border-elem-right {
+    border-left: 1px solid #e0e0e0;
+  }
+  
+  .sticky-first-column-container .mat-table-sticky-border-elem-left {
+    border-right: 1px solid #e0e0e0;
+  }
+  
+  .sticky-first-column-container table th.mat-header-cell:last-of-type,
+  .sticky-first-column-container table tr td.mat-cell:last-of-type{
+    text-align: center;
+  }
+  
+  .sticky-first-column-container table tr td.mat-cell:nth-of-type(2){
+  
+    white-space: normal;
+  
+  }
+  
+  /* right aligning all columns other than first and second */
+  .sticky-first-column-container table tr td.mat-cell:not(:nth-of-type(1),:nth-of-type(2),:last-of-type){
+    text-align: right;
+  }
+  
+  /* .sticky-first-column-container table thead tr th:not(:nth-child(1),:nth-child(2),:last-child) .mat-sort-header-container{ */
+  .sticky-first-column-container table th:not(:nth-child(1),:nth-child(2),:last-child) ::ng-deep .mat-sort-header-container{ 
+    justify-content: flex-start;
+    flex-direction: row-reverse;
+  }
+  .sticky-first-column-container table th ::ng-deep .mat-sort-header-container button{ 
+    white-space: nowrap;
+  }
+  
+  
+  .sticky-first-column-container table th.mat-header-cell:nth-of-type(1),
+  .sticky-first-column-container table tr td.mat-cell:nth-of-type(1){
+    
+    box-shadow: 4px 0 8px 0 rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+  }
+  
+  .sticky-first-column-container table th.mat-header-cell:nth-of-type(2),
+  .sticky-first-column-container table tr td.mat-cell:nth-of-type(2){
+    padding-left: 1rem;
+  }

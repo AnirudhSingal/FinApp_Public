@@ -1,0 +1,133 @@
+.snapshot-details-data{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+@media screen and (max-width: 320px){
+    .snapshot-details-data .databox{
+        box-sizing: border-box;
+        padding-left:1rem;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 320px){
+    .snapshot-details-data .databox{
+        box-sizing: border-box;
+        padding-left:1rem;
+        width: 50%;
+    }
+}
+@media screen and (min-width: 480px){
+    .snapshot-details-data .databox{
+        box-sizing: border-box;
+        padding-left:1rem;
+        width: 50%;
+    }
+}
+@media screen and (min-width: 768px){
+    .snapshot-details-data .databox{
+        box-sizing: border-box;
+        padding-left:1rem;
+        width: 50%;
+    }
+}
+@media screen and (min-width: 1024px){
+    .snapshot-details-data .databox{
+        box-sizing: border-box;
+        padding-left:1rem;
+        width: 33.33%;
+    }
+}
+
+/* skeleton */
+
+.snapshot-details-skeleton{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.databox-skeleton, .databox-range-skeleton{
+    display: flex;
+    flex-direction: column;
+}
+.databox-skeleton div div, .databox-range-skeleton div div{
+    background-color: white;
+    border-radius: 0.1rem;
+}
+.databox-skeleton div, .databox-range-skeleton div{
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+.databox-skeleton div div:first-child{
+    height: 0.6rem;
+    margin-top: calc(calc(0.6rem * 0.5 * 0.7)  + 1px );
+    margin-bottom: calc(0.6rem * 0.5 * 0.3);
+}
+.databox-skeleton div div:last-child{
+    height: 0.9rem;
+    margin-top: calc(0.9rem * 0.5 * 0.4);
+    margin-bottom: calc(0.9rem * 0.5 * 0.6);
+}
+
+.databox-range-skeleton div div:first-child{
+    height: 0.6rem;
+    margin-top: calc(calc(0.6rem * 0.5 * 0.7)  + 1px );
+    margin-bottom: calc(0.6rem * 0.5 * 0.3);
+}
+.databox-range-skeleton div div:nth-child(2){
+    height: 0.9rem;
+    margin-top: calc(0.9rem * 0.5 * 0.4);
+    margin-bottom: calc(0.9rem * 0.5 * 0.6);
+}
+.databox-range-skeleton div div:last-child{
+    /* height: calc(0.9rem * 1.5); */
+    /* margin-bottom: calc(1px + 0.6rem * 0.5 * 0.7); */
+    height: 12px;
+    margin-bottom: 8px; 
+}
+.databox-range-skeleton div{
+    /* margin-bottom: calc (1rem - calc(1px + 0.6rem * 0.5 * 0.7)) */
+    margin-bottom: 1rem;
+
+}
+
+.databox-skeleton .skeleton-bone , .databox-range-skeleton .skeleton-bone{
+    display: flex;
+    flex-direction: column;
+}
+
+
+@media screen and (max-width: 320px){
+    .databox-skeleton, .databox-range-skeleton{
+        box-sizing: border-box;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 320px){
+    .databox-skeleton, .databox-range-skeleton{
+        box-sizing: border-box;
+        width: 50%;
+    }
+}
+@media screen and (min-width: 480px){
+    .databox-skeleton, .databox-range-skeleton{
+        box-sizing: border-box;
+        width: 50%;
+    }
+}
+@media screen and (min-width: 768px){
+    .databox-skeleton, .databox-range-skeleton{
+        box-sizing: border-box;
+        width: 50%;
+    }
+}
+@media screen and (min-width: 1024px){
+    .databox-skeleton, .databox-range-skeleton{
+        box-sizing: border-box;
+        width: 33.33%;
+    }
+}

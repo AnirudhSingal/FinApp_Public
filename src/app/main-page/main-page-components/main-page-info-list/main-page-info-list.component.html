@@ -1,0 +1,91 @@
+<div *ngIf="isDataLoaded">
+    <div class="list-label" [routerLink] = "routerLinkValue">
+        {{tableLabel}}
+    </div>
+
+
+    <div class="info-list">
+        <div  *ngFor="let data of tableData" class="info-element">
+            <div class="info-element-header" #coloredLabel >
+                <div class="name text-color-highlight">{{data.ticker | NullValueConverter}}</div>
+                <div class="price">{{data.price | twoDecimal | NullValueConverter}}</div>
+                <div class="change" [ngClass]= "(data.changes > 0)? 'tickerColorPositive': 'tickerColorNegative'" >{{data.changes | twoDecimal| NullValueConverter}}</div>
+                <div class="changesPercentage" [ngClass]= "(data.changes > 0)? 'tickerColorPositive': 'tickerColorNegative'">{{data.changesPercentage | twoDecimal| addSymbol:"%" |NullValueConverter}}</div>
+            </div>
+            <div class="company-name">{{data.companyName}}</div>
+        </div>
+    </div>
+</div>
+
+
+<div *ngIf="!isDataLoaded">
+    <div class="list-label">
+        {{tableLabel}}
+    </div>
+    <div class="info-list-skeleton skeleton-bone">
+        <div class="main-page-side-container-skeleton-content" *ngFor="let n of 5 | GetArray">
+
+            <div>
+                <div [ngStyle]="{
+                    'width.rem' : 2 | GetRandom : 3 
+                }"></div>
+            </div>
+            <div>
+                <div [ngStyle]="{
+                    'width.rem' : 2 | GetRandom : 3 
+                }"></div>
+            </div>
+            <div>
+                <div [ngStyle]="{
+                    'width.rem' : 2 | GetRandom : 3
+                }"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <div *ngIf="isDataLoaded">
+    <div class="list-label">
+        {{tableLabel}}
+    </div>
+    <table class="info-list">
+        <tbody>
+            <tr class="info-element" *ngFor="let data of tableData" #coloredLabel>
+                <td class="name">{{data.ticker}}</td>
+                <td class="changesPercentage">
+                    <div>
+                        {{data.changesPercentage | number:'0.2-2'}}%
+                    </div>
+                </td>
+                <td class="price">{{data.price | number:'0.2-2'}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div *ngIf="!isDataLoaded">
+    <div class="list-label">
+        {{tableLabel}}
+    </div>
+    <div class="info-list-skeleton skeleton-bone">
+        <div class="main-page-side-container-skeleton-content" *ngFor="let n of 5 | GetArray">
+
+            <div>
+                <div [ngStyle]="{
+                    'width.rem' : 2 | GetRandom : 3 
+                }"></div>
+            </div>
+            <div>
+                <div [ngStyle]="{
+                    'width.rem' : 2 | GetRandom : 3 
+                }"></div>
+            </div>
+            <div>
+                <div [ngStyle]="{
+                    'width.rem' : 2 | GetRandom : 3
+                }"></div>
+            </div>
+        </div>
+    </div>
+</div> -->

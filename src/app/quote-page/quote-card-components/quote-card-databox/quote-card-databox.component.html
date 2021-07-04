@@ -1,0 +1,18 @@
+<header class="title">
+    {{heading}}
+</header>
+<div class="value" *ngIf="!isRange">
+    <span class="website-link" *ngIf="isLink" (click)="redirectToLink(value)">
+        {{value}}
+    </span>
+    <span *ngIf="!isLink">
+        {{value}}
+    </span>
+</div>
+
+<div class="range" *ngIf="isRange">
+    <div class="value-range">
+        {{lowerLimit}} - {{upperLimit}}
+    </div>    
+    <div class ="range-figure" id="{{figureId}}"></div>
+</div>

@@ -1,0 +1,190 @@
+path#priceChart {
+    fill: none;
+    stroke-width: 1.5px;
+}
+#price-chart-area{
+    opacity: 0.5;
+}
+
+.symbol-name{
+    font-size: 0.7rem ;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    /* font-weight: 500; */
+}
+.change-group{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.component-body{
+    border-top: black dotted 1px;
+    font-weight: bold ;
+}
+.price-details{
+    font-size: 0.6rem;
+    display: flex;
+    flex-direction: row;
+}
+.price-details figure{
+    width: 50%;
+    /* height: 2rem; */
+    padding: 0.2rem ;
+}
+.price-details figure svg{
+    
+    width: 100%;;
+    
+}
+
+.price-details .price-details-element{
+    width: 50%;
+    padding:auto;
+    display: flex;
+    flex-direction: column;
+    /* justify-content:center; */
+    /* align-items:center; */
+}
+
+.overlay {
+    fill: transparent;
+    pointer-events: all;
+}
+
+.focus circle {
+    fill: black;
+}
+/* 
+.focus text {
+    font-size: 14px;
+} */
+
+.tooltip-box{
+    opacity : 0.2
+}
+.tooltip-time, .tooltip-price {
+    font-weight: bold;
+}
+
+.tooltip-time {
+    text-align: right;
+}
+
+.tooltip-price {
+    text-align: left;
+}
+
+
+.current-price-tag text{
+    fill: white
+}
+
+.previous-close-tag  rect{
+    fill: black;
+}
+.previous-close-tag text{
+    fill: white;
+
+}
+
+.positive-difference{
+    fill: green
+}
+.negative-difference{
+    fill: red
+}
+
+
+/* x-axis */
+
+g.x-axis.x-axis-1d-detailed-plot .tick text{
+    overflow: visible;
+}
+
+
+/* y-axis */
+g.y-axis.y-axis-1d-detailed-price .tick line{
+    stroke-opacity: 0.2;
+}
+
+g.y-axis.y-axis-1d-detailed-price .tick line{
+    stroke-opacity: 0.2;
+}
+
+/* line */
+
+line.line.line-previous-close-1d-detailed{
+    stroke: black;
+    stroke-width: 1.4;
+    stroke-dasharray:1.4;
+    stroke-linecap: butt;
+    stroke-opacity: 1
+}
+
+line.line.line-current-price-line-1d-detailed{
+    stroke : black;
+    stroke-width : 1;
+    stroke-dasharray : 2,4;
+    stroke-linecap : round;
+    stroke-opacity : 1;
+}
+
+line.line.line-plot-divider-1d-detailed{
+    stroke : black;
+    stroke-width : 1;
+    stroke-linecap : butt;
+    stroke-opacity : 1;
+}
+line.line.line-tooltip-line-1d-detailed{
+    stroke : black;
+    stroke-width : 1;
+    stroke-dasharray : 2,4;
+    stroke-linecap : round;
+    stroke-opacity : 1;
+}
+
+line.line.line-tooltip-divider-1d-detailed{
+    stroke : black;
+    stroke-width : 1.5;
+    stroke-opacity : 1;
+}
+
+/* gridlines */
+g.grid.grid-1d-detailed-price .tick line{
+    stroke-opacity: 0.2;
+}
+
+/* rect */
+rect.rect.rect-volume-plot-bg-1d-detailed{
+    fill : #e8e9e8;
+}
+
+.close-tags g rect{
+    padding: 2px
+}
+
+
+/* toggle group style */
+
+.mat-button-toggle-group-appearance-standard{
+    border:unset;
+}
+.mat-button-toggle-disabled {
+    border: 1px solid #c5c0c7;
+    background-color: #e1dde5;
+}
+
+/* chart head*/
+
+.chart-head{
+    font-size: 0.6rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+fa-icon{
+    margin-right:0.2rem;
+}
+

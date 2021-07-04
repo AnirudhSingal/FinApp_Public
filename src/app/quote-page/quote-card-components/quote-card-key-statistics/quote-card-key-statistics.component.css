@@ -1,0 +1,118 @@
+/* Universal */
+
+.key-statistics-element-value{
+    margin-left:1rem;
+}
+
+.key-statictics-header{
+    font-size: 1.4rem;
+}
+
+.key-statistics-details{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.key-statistics-element{
+    box-sizing: border-box;
+
+    padding: 0.5rem 0;
+
+}
+
+.key-statistics-element-content{
+    border-top: 1px black dotted;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.key-statistics-element-header{
+    /* text-transform: uppercase; */
+    font-weight: lighter ;
+}
+
+.key-statistics-element-header, .key-statistics-element-value{
+    /* set to make the height of skeleton same as the line height of the text (see below under .key-statistics-element-content-skeleton) */
+    line-height: 1.618; 
+}
+/* For Large Screens*/
+.key-statistics-element
+{
+    font-size: 0.9rem;
+    width: 50%
+}
+.key-statistics-element:nth-of-type(odd){
+    padding-right: 0.9rem;
+}
+
+@media screen and (max-width: 480px){
+    .key-statistics-element
+    {
+        width: 100%
+    }
+    .key-statistics-element:nth-of-type(odd){
+        padding-right: 0;
+    }
+}
+
+
+
+/* ##################################################
+For Skeleton Loader
+################################################## */
+
+
+.key-statistics-details-skeleton{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 1rem 0;
+}
+
+.key-statistics-skeleton-component
+{
+    box-sizing: border-box;
+    width: 50%;
+    margin: 0.25rem 0;
+}
+
+
+.key-statistics-element-content-skeleton{
+    display: block;
+    /* make padding tranparent */
+    background-image:linear-gradient(to bottom, white 0%, white 100%), linear-gradient(to bottom, transparent 0%, transparent 100%);
+
+    background-clip: content-box, padding-box;
+    /* 1px added to compensate for the border */
+    height: calc(1.618*calc(0.9rem) + 1px); 
+    padding: 0.2rem;
+}
+.key-statistics-skeleton-component:nth-of-type(odd) .key-statistics-element-content-skeleton{
+    margin-left: 1rem;
+}
+
+.key-statistics-skeleton-component:nth-of-type(even) .key-statistics-element-content-skeleton{
+    margin-right: 1rem;
+}
+.key-statistics-element-value-skeleton{
+    margin-left:1rem;
+}
+
+.key-statistics-skeleton-component:nth-of-type(odd){
+    padding-right: 0.9rem;
+}
+
+@media screen and (max-width: 480px){
+    .key-statistics-skeleton-component{
+        width: 100%;
+        margin: 0.375rem 0;
+    }
+    .key-statistics-skeleton-component:nth-of-type(odd){
+        padding-right: 0;
+    }
+    .key-statistics-element-content-skeleton{
+        margin: 0 1rem;
+
+    }
+}

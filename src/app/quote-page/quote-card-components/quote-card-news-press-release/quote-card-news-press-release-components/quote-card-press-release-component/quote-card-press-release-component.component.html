@@ -1,0 +1,21 @@
+<div *ngIf="isDataLoaded">
+    <div *ngFor="let value of infiniteScrollList">
+        <section class="press-release-card" (click) = "redirectToLink(value.url)">
+            {{value.title}}
+        </section>
+    </div>
+    <!-- anchor for intersection observer -->
+    <div class="anchor" #anchor></div> 
+</div>
+<div *ngIf="!isDataLoaded">
+    <div class="press-release-data-skeleton skeleton-bone" *ngFor="let n of 10 | GetArray" >
+        <div class="press-release-data-skeleton-element" *ngFor="let n of 2 | GetArray" [ngStyle]="{
+            'width.%' : 60 | GetRandom : 90
+        }"></div>
+    </div>
+</div>
+<div *ngIf="isLoadMoreButtonActive">
+    <button (click) = "loadMoreItems(pressReleaseList,infiniteScrollList)">
+        Load More...
+    </button>
+</div>
